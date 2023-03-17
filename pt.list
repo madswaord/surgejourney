@@ -1,4 +1,4 @@
-# Private Tracker
+# > Private Tracker
 DOMAIN-SUFFIX,52pt.site
 DOMAIN-SUFFIX,aidoru-online.me
 DOMAIN-SUFFIX,alpharatio.cc
@@ -116,3 +116,6 @@ DOMAIN-SUFFIX,u2.dmhy.org
 DOMAIN-SUFFIX,uhdbits.org
 DOMAIN-SUFFIX,xauat6.edu.cn
 DOMAIN-SUFFIX,zmpt.cc
+
+DOMAIN-SUFFIX,smtp
+URL-REGEX,(Subject|HELO|SMTP)
