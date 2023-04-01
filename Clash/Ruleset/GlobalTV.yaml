@@ -1,0 +1,282 @@
+payload:
+  # > ABC
+  - DOMAIN-SUFFIX,edgedatg.com
+  - DOMAIN-SUFFIX,go.com
+
+  # > AbemaTV
+  # - USER-AGENT,AbemaTV*
+  - DOMAIN-SUFFIX,abema.io
+  - DOMAIN-SUFFIX,abema.tv
+  - DOMAIN-SUFFIX,ameba.jp
+  - DOMAIN-SUFFIX,hayabusa.io
+  - DOMAIN-KEYWORD,abematv.akamaized.net
+
+  # > Amazon Prime Video
+  # - USER-AGENT,InstantVideo.US*
+  # - USER-AGENT,Prime%20Video*
+
+  - DOMAIN-KEYWORD,avoddashs
+
+  - DOMAIN-SUFFIX,aiv-cdn.net
+  - DOMAIN-SUFFIX,aiv-delivery.net
+  - DOMAIN-SUFFIX,amazonprimevideos.com
+  - DOMAIN-SUFFIX,amazonvideo.cc
+  - DOMAIN-SUFFIX,amazonvideo.com
+  - DOMAIN-SUFFIX,amazonvideodirect.cc
+  - DOMAIN-SUFFIX,atv-ext.amazon.com
+  - DOMAIN-SUFFIX,atv-ext-eu.amazon.com
+  - DOMAIN-SUFFIX,atv-ext-fe.amazon.com
+  - DOMAIN-SUFFIX,atv-ps.amazon.com
+  - DOMAIN-SUFFIX,atv-ps-eu.amazon.co.uk
+  - DOMAIN-SUFFIX,atv-ps-eu.amazon.com
+  - DOMAIN-SUFFIX,atv-ps-fe.amazon.co.jp
+  - DOMAIN-SUFFIX,atv-ps-fe.amazon.com
+  - DOMAIN-SUFFIX,fls-na.amazon.com
+  - DOMAIN-SUFFIX,media-amazon.com
+  - DOMAIN-SUFFIX,primevideo.cc
+  - DOMAIN-SUFFIX,primevideo.com
+  - DOMAIN-SUFFIX,prime-video.com
+  - DOMAIN-SUFFIX,primevideo.info
+  - DOMAIN-SUFFIX,primevideo.org
+  - DOMAIN-SUFFIX,primevideo.tv
+  - DOMAIN-SUFFIX,pv-cdn.net
+  - DOMAIN-SUFFIX,video.a2z.com
+
+  - DOMAIN,avodmp4s3ww-a.akamaihd.net
+  - DOMAIN,d1v5ir2lpwr8os.cloudfront.net
+  - DOMAIN,d1y002tclu9djj.cloudfront.net
+  - DOMAIN,d22qjgkvxw22r6.cloudfront.net
+  - DOMAIN,d25xi40x97liuc.cloudfront.net
+  - DOMAIN,dmqdd6hw24ucf.cloudfront.net
+  - DOMAIN,d27xxe7juh1us6.cloudfront.net
+
+  - DOMAIN,dualstack.pefs-alb-266603904.eu-west-1.elb.amazonaws.com
+
+
+  # - URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/
+
+  # > Bahamut
+  # - USER-AGENT,Anime*
+  - DOMAIN-SUFFIX,bahamut.com.tw
+  - DOMAIN-SUFFIX,gamer.com.tw
+  - DOMAIN,gamer-cds.cdn.hinet.net
+  - DOMAIN,gamer2-cds.cdn.hinet.net
+
+  # > BBC iPlayer
+  # - USER-AGENT,BBCiPlayer*
+  - DOMAIN-KEYWORD,bbcfmt
+  - DOMAIN,aod-dash-uk-live.akamaized.net
+  - DOMAIN,aod-hls-uk-live.akamaized.net
+  - DOMAIN,vod-dash-uk-live.akamaized.net
+  - DOMAIN,vod-thumb-uk-live.akamaized.net
+  - DOMAIN-SUFFIX,bbc.co
+  - DOMAIN-SUFFIX,bbc.co.uk
+  - DOMAIN-SUFFIX,bbc.com
+  - DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net
+  - DOMAIN-SUFFIX,bbci.co
+  - DOMAIN-SUFFIX,bbci.co.uk
+  - DOMAIN-SUFFIX,bidi.net.uk
+
+  # > DAZN
+  # - USER-AGENT,DAZN*
+
+  - DOMAIN-SUFFIX,dazn-api.com
+  - DOMAIN-SUFFIX,dazn.com
+  - DOMAIN-SUFFIX,dazndn.com
+  - DOMAIN-SUFFIX,indazn.com
+  - DOMAIN-SUFFIX,indaznlab.com
+  - DOMAIN-SUFFIX,dcalivedazn.akamaized.net
+  - DOMAIN-SUFFIX,dcblivedazn.akamaized.net
+  - DOMAIN-SUFFIX,dc1live2lindazn.akamaized.net
+  - DOMAIN-SUFFIX,dc1-lm-live2dazn.secure.footprint.net
+  - DOMAIN-SUFFIX,dc1voddazn.akamaized.net
+  - DOMAIN-SUFFIX,dc2voddazn.akamaized.net
+
+  # > Discovery Plus
+  # - USER-AGENT,DPlus*
+  - DOMAIN-SUFFIX,content-ause1-ur-discovery1.uplynk.com
+  - DOMAIN-SUFFIX,disco-api.com
+  - DOMAIN-SUFFIX,discoveryplus.com
+  - DOMAIN-SUFFIX,fwmrm.net
+  - DOMAIN-SUFFIX,getblueshift.com
+  - DOMAIN-SUFFIX,litix.io
+  - DOMAIN-SUFFIX,mobile-collector.newrelic.com
+  - DOMAIN-SUFFIX,uplynk.com
+
+  # > encoreTVB
+  # - USER-AGENT,encoreTVB*
+  - DOMAIN-SUFFIX,encoretvb.com
+  - DOMAIN,content.jwplatform.com
+  - DOMAIN,videos-f.jwpsrv.com
+
+  # > F1 TV
+  - DOMAIN,d2n9h2wits23hf.cloudfront.net
+  - DOMAIN,f1prodlive.akamaized.net
+  - DOMAIN,mobile-collector.newrelic.com
+  - DOMAIN-SUFFIX,bitmovin.com
+  - DOMAIN-SUFFIX,f1esports.com
+  - DOMAIN-SUFFIX,f1manager.com
+  - DOMAIN-SUFFIX,f1play.com
+  - DOMAIN-SUFFIX,formula1.com
+
+  # > Fox Now
+  # - USER-AGENT,FOX%20NOW*
+  - DOMAIN-SUFFIX,fox.com
+  - DOMAIN-SUFFIX,foxdcg.com
+  - DOMAIN-SUFFIX,uplynk.com
+
+  # > Fox+ (HK|TW|SG)
+  # - USER-AGENT,FOXPlus*
+  - DOMAIN-SUFFIX,akamaized.net
+  - DOMAIN-SUFFIX,foxplus.com
+  - DOMAIN-SUFFIX,theplatform.com
+
+  # > HBO GO Asia
+  # - USER-AGENT,HBO%20GO%20PROD*
+
+  # - DOMAIN-KEYWORD,hboasia
+  - DOMAIN-KEYWORD,hbogoasia
+
+  - DOMAIN-SUFFIX,hboasia.com
+  - DOMAIN-SUFFIX,hbogo.co.th
+  - DOMAIN-SUFFIX,hbogo.com
+  - DOMAIN-SUFFIX,hbogo.eu
+  - DOMAIN-SUFFIX,hbogoasia.com
+  - DOMAIN-SUFFIX,hbogoasia.id
+  - DOMAIN-SUFFIX,hbogoasia.ph
+
+  - DOMAIN,hbolb.onwardsmg.com
+  - DOMAIN,hbounify-prod.evergent.com
+  # - DOMAIN,bcbolthboa-a.akamaihd.net
+  - DOMAIN,dai3fd1oh325y.cloudfront.net
+  # - DOMAIN,hboasialive.akamaized.net
+  # - DOMAIN,hbogoprod-vod.akamaized.net
+
+  # > HBO Max
+  # - USER-AGENT,HBOMAX*
+
+  - DOMAIN-SUFFIX,hbo.com
+  - DOMAIN-SUFFIX,hbomax.com
+  - DOMAIN-SUFFIX,hbomaxcdn.com
+  - DOMAIN-SUFFIX,hbonow.com
+  - DOMAIN-SUFFIX,maxgo.com
+
+  - DOMAIN,execute-api.ap-southeast-1.amazonaws.com
+
+  # > Hulu(銉曘兗銉兗)
+  - DOMAIN-SUFFIX,happyon.jp
+  - DOMAIN-SUFFIX,hulu.jp
+  - DOMAIN-SUFFIX,prod.hjholdings.tv
+  - DOMAIN-SUFFIX,streaks.jp
+  - DOMAIN-SUFFIX,yb.uncn.jp
+
+  # > Hulu
+  - DOMAIN-SUFFIX,hulu.com
+  - DOMAIN-SUFFIX,hulu.hb.omtrdc.net
+  - DOMAIN-SUFFIX,hulu.sc.omtrdc.net
+  - DOMAIN-SUFFIX,huluad.com
+  - DOMAIN-SUFFIX,huluim.com
+  - DOMAIN-SUFFIX,hulumail.com
+  - DOMAIN-SUFFIX,huluqa.com
+  - DOMAIN-SUFFIX,hulustream.com
+
+  - DOMAIN,cs428.wpc.edgecastcdn.net
+  - DOMAIN,cws-hulu.conviva.com
+  - DOMAIN,hulu.com.c.footprint.net
+  - DOMAIN,hulu.map.fastly.net
+
+  - IP-CIDR,8.28.124.0/23
+  - IP-CIDR,199.60.116.0/24
+  - IP-CIDR,199.200.48.0/22
+  - IP-CIDR,208.91.156.0/22
+  - IP-CIDR6,2620:100:3000::/40
+
+  # > Japonx
+  - DOMAIN-KEYWORD,japonx
+  - DOMAIN-KEYWORD,japronx
+  - DOMAIN-SUFFIX,japonx.com
+  - DOMAIN-SUFFIX,japonx.tv
+  - DOMAIN-SUFFIX,japonx.net
+  - DOMAIN-SUFFIX,japonx.vip
+  - DOMAIN-SUFFIX,japronx.com
+  - DOMAIN-SUFFIX,japronx.tv
+  - DOMAIN-SUFFIX,japronx.net
+  - DOMAIN-SUFFIX,japronx.vip
+
+  # > JOOX
+  # - USER-AGENT,WeMusic*
+  # - USER-AGENT,JOOX*
+  - DOMAIN-SUFFIX,joox.com
+
+  # > KKBOX
+  - DOMAIN-SUFFIX,kkbox.com
+  - DOMAIN-SUFFIX,kkbox.com.tw
+  - DOMAIN-SUFFIX,kfs.io
+
+  # > KKTV
+  # - USER-AGENT,KKTV*
+  # - USER-AGENT,com.kktv*
+  - DOMAIN-SUFFIX,kktv.me
+  - DOMAIN-SUFFIX,kktv.com.tw
+  - DOMAIN,kktv-theater.kk.stream
+
+  # > Line TV
+  # - USER-AGENT,LINE*
+  - DOMAIN-SUFFIX,d3c7rimkq79yfu.cloudfront.net
+  - DOMAIN-SUFFIX,linetv.tw
+  - DOMAIN-SUFFIX,profile.line-scdn.net
+
+  # > myTV_SUPER
+  # - USER-AGENT,mytv*
+  - DOMAIN-KEYWORD,nowtv100
+  - DOMAIN-KEYWORD,rthklive
+  - DOMAIN-SUFFIX,mytvsuper.com
+  - DOMAIN-SUFFIX,tvb.com
+
+  # > Niconico
+  - DOMAIN-SUFFIX,dmc.nico
+  - DOMAIN-SUFFIX,nicovideo.jp
+  - DOMAIN-SUFFIX,nicodic.jp
+  - DOMAIN-SUFFIX,nicomanga.jp
+  - DOMAIN-SUFFIX,niconico.com
+  - DOMAIN-SUFFIX,nicoseiga.jp
+  - DOMAIN-SUFFIX,nimg.jp
+  - DOMAIN-SUFFIX,simg.jp
+  - DOMAIN-SUFFIX,socdm.com
+
+  # > Pandora
+  - DOMAIN-SUFFIX,pandora.com
+
+  # > PBS
+  # - USER-AGENT,PBS*
+  - DOMAIN-SUFFIX,pbs.org
+
+
+  # > Pornhub
+  - DOMAIN-SUFFIX,phncdn.com
+  - DOMAIN-SUFFIX,phprcdn.com
+  - DOMAIN-SUFFIX,pornhub.com
+  - DOMAIN-SUFFIX,pornhubpremium.com
+
+  # > SoundCloud
+  # - USER-AGENT,SoundCloud*
+
+  - DOMAIN-SUFFIX,sndcdn.com
+  - DOMAIN-SUFFIX,soundcloud.app.goo.gl
+  - DOMAIN-SUFFIX,soundcloud.com
+  - DOMAIN-SUFFIX,soundcloudmail.com
+
+  # > ViuTV
+  # - USER-AGENT,ViuTV*
+  - DOMAIN-SUFFIX,bootstrapcdn.com
+  - DOMAIN-SUFFIX,cloudfront.net
+  - DOMAIN-SUFFIX,cognito-identity.us-east-1.amazonaws.com
+  - DOMAIN-SUFFIX,firebaseio.com
+  - DOMAIN-SUFFIX,jwpcdn.com
+  - DOMAIN-SUFFIX,jwplayer.com
+  - DOMAIN-SUFFIX,mobileanalytics.us-east-1.amazonaws.com
+  - DOMAIN-SUFFIX,nowe.com
+  - DOMAIN-SUFFIX,viu.com
+  - DOMAIN-SUFFIX,viu.tv
+  - DOMAIN-SUFFIX,viu.now.com
+
