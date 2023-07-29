@@ -37,57 +37,6 @@ if (url.includes("/v1/search/banner_list")) {
       }
     });
   }
-} else if (url.includes("/v4/followfeed")) {
-  // 关注列表
-  if (obj.data?.items) {
-    // recommend_user 可能感兴趣的人
-    obj.data.items = obj.data.items.filter(
-      (i) => !["recommend_user"].includes(i.recommend_reason)
-    );
-  }
-} else if (url.includes("/v4/search/trending")) {
-  // 搜索栏
-  if (obj.data?.queries) {
-    obj.data.queries = [];
-  }
-  if (obj.data?.hint_word) {
-    obj.data.hint_word = {};
-  }
-} else if (url.includes("/v4/search/hint")) {
-  // 搜索栏填充词
-  if (obj.data?.hint_words) {
-    obj.data.hint_words = [];
-  }
-} else if (url.includes("/v6/homefeed")) {
-  if (obj.data) {
-    // 信息流广告
-    let newItems = [];
-    for (let item of obj.data) {
-      // 信息流-直播
-      if (item.model_type === "live_v2") {
-        continue;
-        // 信息流-赞助
-      } else if (item.ads_info) {
-        continue;
-        // 信息流-带货
-      } else if (item.card_icon) {
-        continue;
-        // 信息流-商品
-      } else if (item?.note_attributes?.includes("goods")) {
-        continue;
-      } else {
-        newItems.push(item);
-      }
-    }
-    obj.data = newItems;
-  }
-} else if (url.includes("/v10/search/notes")) {
-  if (obj.data?.items) {
-    // hot_query 大家还在搜
-    obj.data.items = obj.data.items.filter(
-      (i) => !["ads", "hot_query"].includes(i.model_type)
-    );
-  }
-}
+} 
 
 $done({ body: JSON.stringify(obj) });
