@@ -1,0 +1,41 @@
+#!name = 小红书去广告
+#!desc = 过滤信息流推广，移除图片及视频水印。
+#!homepage = https://github.com/madswaord/surgejourney/tree/main/Surge
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/RedPaper.png
+
+[Script]
+
+# 搜索页
+RedPaper_remove_ads_15 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list\??, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+
+RedPaper_remove_ads_16 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+
+RedPaper_remove_ads_17 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+
+# 开屏广告
+RedPaper_remove_ads_19 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+
+RedPaper_remove_ads_20 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config$, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+
+# 信息流
+RedPaper_remove_ads_22 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+
+#RedPaper_remove_ads_23 = type=http-response, pattern=http-response, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/ReaPaper/RedPaper_remove_ads.js, requires-body=true, max-size=3145728, timeout=30
+# 移除图片视频水印
+replace-body_25 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v[23]\/note\/(feed|redtube|videofeed)\?, script-path=https://raw.githubusercontent.com/madswaord/surgejourney/main/Resources/CommonScripts/replace-body.js, requires-body=true, max-size=3145728, timeout=30, argument=""disable_watermark":false,-&gt;"
+
+[Map Local]
+
+# 惊喜弹窗
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style\?|open\?|submit_action$) data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 信息流
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/www\.xiaohongshu\.com\/api\/sns\/v1\/ads\/resource\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+[MITM]
+
+hostname = %APPEND% edith.xiaohongshu.com,www.xiaohongshu.com
