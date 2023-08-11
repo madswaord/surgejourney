@@ -1,3 +1,20 @@
+# NAME: Apple
+# UPDATED: 2023-07-20 23:20:06
+
+DOMAIN-KEYWORD,apple.com.edgekey.net
+DOMAIN-KEYWORD,testflight
+USER-AGENT,com.apple.appstored*
+USER-AGENT,Music*
+USER-AGENT,AppleNews*
+USER-AGENT,com.apple.news*
+USER-AGENT,com.apple.trustd*
+USER-AGENT,AppleTV*
+USER-AGENT,com.apple.tv*
+PROCESS-NAME,storedownloadd
+PROCESS-NAME,Music
+PROCESS-NAME,News
+PROCESS-NAME,LookupViewService
+PROCESS-NAME,TV
 # > Apple API
 DOMAIN-KEYWORD,apple.com.akadns.net
 DOMAIN-KEYWORD,icloud.com.akadns.net
