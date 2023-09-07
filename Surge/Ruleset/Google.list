@@ -9,6 +9,8 @@ DOMAIN,alt7-mtalk.google.com
 DOMAIN,alt8-mtalk.google.com
 DOMAIN,mtalk.google.com
 DOMAIN,bard.google.com
+DOMAIN,fonts.gstatic.com
+DOMAIN,ssl.gstatic.com
 DOMAIN-SUFFIX,googleapis.com
 IP-CIDR,64.233.177.188/32,no-resolve
 IP-CIDR,64.233.186.188/32,no-resolve
