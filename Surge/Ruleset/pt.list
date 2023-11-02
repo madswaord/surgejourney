@@ -91,7 +91,7 @@ DOMAIN-SUFFIX,oppaiti.me
 DOMAIN-SUFFIX,orpheus.network
 DOMAIN-SUFFIX,ourbits.club
 DOMAIN-SUFFIX,passthepopcorn.me
-# DOMAIN-SUFFIX,piggo.me
+DOMAIN-SUFFIX,piggo.me
 DOMAIN-SUFFIX,pornbits.net
 DOMAIN-SUFFIX,privatehd.to
 DOMAIN-SUFFIX,pterclub.com
@@ -117,5 +117,3 @@ DOMAIN-SUFFIX,uhdbits.org
 DOMAIN-SUFFIX,xauat6.edu.cn
 DOMAIN-SUFFIX,zmpt.cc
 
-DOMAIN-SUFFIX,smtp
-URL-REGEX,(Subject|HELO|SMTP)
