@@ -1,0 +1,773 @@
+{
+ "log": {
+  "disabled": false,
+  "level": "info",
+  "output": "box.log",
+  "timestamp": true
+ },
+ "dns": {
+  "servers": [
+   {
+    "tag": "dns_proxy",
+    "address": "https://1.1.1.1/dns-query",
+    "address_resolver": "local",
+    "strategy": "prefer_ipv6",
+    "detour": "select"
+   },
+   {
+    "tag": "local",
+    "address": "tls://1.12.12.12",
+    "strategy": "prefer_ipv6",
+    "detour": "direct"
+   },
+   {
+    "tag": "dns_block",
+    "address": "rcode://refused"
+   }
+  ],
+  "rules": [
+   {
+    "outbound": "any",
+    "server": "local"
+   },
+   {
+    "clash_mode": "direct",
+    "server": "local"
+   },
+   {
+    "clash_mode": "rule",
+    "server": "dns_proxy"
+   },
+   {
+    "clash_mode": "global",
+    "server": "dns_proxy"
+   },
+   {
+    "rule_set": [
+     "geosite-xiaomi-ads",
+     "AWAvenue"
+    ],
+    "server": "dns_block"
+   },
+   {
+    "domain_suffix": [
+     "tpddns.cn"
+    ],
+    "server": "local"
+   },
+   {
+    "rule_set": [
+     "WeChat",
+     "Bilibili",
+     "geosite-xiaomi",
+     "geosite-geolocation-cn",
+     "geoip-cn"
+    ],
+    "server": "local"
+   },
+   {
+    "domain": [
+     "services.googleapis.cn",
+     "services.googleapis.com",
+     "xn--ngstr-lra8j.com"
+    ],
+    "server": "dns_proxy"
+   },
+   {
+    "package_name": [
+     "com.tencent.mm",
+     "com.tencent.mobileqq",
+     "com.xingin.xhs",
+     "com.baidu.tieba",
+     "com.dragon.read",
+     "com.ss.android.auto",
+     "com.douban.frodo",
+     "com.sina.weibo",
+     "com.zhihu.android"
+    ],
+    "server": "local"
+   },
+   {
+    "package_name": [
+     "com.google.android.youtube",
+     "com.okinc.okex.gp",
+     "com.binance.dev",
+     "com.bitget.exchange",
+     "org.chromium.webapk.a24683102473f5b8b_v2",
+     "app.phantom",
+     "io.metamask",
+     "com.android.vending",
+     "app.nicegram",
+     "com.twitter.android",
+     "com.openai.chatgpt",
+     "com.microsoft.copilot",
+     "com.google.android.apps.bard",
+     "ai.perplexity.app.android",
+     "com.discord",
+     "com.facebook.katana",
+     "com.instagram.android",
+     "com.zhiliaoapp.musically",
+     "com.whatsapp",
+     "com.weather.Weather",
+     "com.tradingview.tradingviewapp",
+     "org.telegram.messenger",
+     "org.telegram.plus"
+    ],
+    "server": "dns_proxy"
+   },
+   {
+    "rule_set": "Global",
+    "server": "dns_proxy"
+   },
+   {
+    "rule_set": [
+     "YouTube",
+     "Telegram",
+     "Netflix",
+     "geoip-google",
+     "geoip-telegram",
+     "geoip-twitter",
+     "geoip-netflix"
+    ],
+    "server": "dns_proxy"
+   }
+  ],
+  "final": "dns_proxy"
+ },
+ "ntp": {
+  "enabled": true,
+  "server": "time.apple.com",
+  "server_port": 123,
+  "interval": "30m0s",
+  "detour": "direct"
+ },
+ "inbounds": [
+  {
+   "type": "tun",
+   "inet4_address": "172.19.0.1/30",
+   "inet6_address": "fdfe:dcba:9876::1/126",
+   "auto_route": true,
+   "exclude_package": [
+    "com.alibaba.wireless",
+    "com.miui.securitycenter",
+    "com.seewo.easicare.pro",
+    "tv.danmaku.bili",
+    "com.zjw.chehang168",
+    "cn.carya",
+    "com.dianping.v1",
+    "com.ss.android.auto",
+    "com.citiccard.mobilebank",
+    "com.ss.android.ugc.aweme",
+    "me.ele",
+    "com.yitong.fjnx.mbank.android",
+    "com.autonavi.minimap",
+    "com.umetrip.android.msky.app",
+    "com.HuaXiaBank.HuaCard",
+    "com.lemon.lv",
+    "com.tmri.app.main",
+    "com.jingdong.app.mall",
+    "com.jd.jrapp",
+    "com.khsdb.delay",
+    "com.coolapk.market",
+    "com.lakala.shqb",
+    "com.lepu.lepucare",
+    "com.jlpay.feishua",
+    "com.shoujiduoduo.ringtone",
+    "com.bankcomm.maidanba",
+    "com.mt.mtxx.mtxx",
+    "com.sankuai.meituan",
+    "com.xiaomi.payment",
+    "com.xiaomi.smarthome",
+    "cn.com.cmbc.newmbank",
+    "net.evecom.android.mztapp",
+    "com.xunmeng.pingduoduo",
+    "com.pingan.paces.ccms",
+    "com.pupumall.customer",
+    "com.miui.fm",
+    "com.foresee.mobile.xmsw",
+    "cn.samsclub.app",
+    "com.taobao.taobao",
+    "com.tencent.wemeet.app",
+    "com.tianyancha.skyeye",
+    "com.sgcc.wsgw.cn",
+    "com.netease.yanxuan",
+    "com.baidu.newapp",
+    "com.woaika.kashen",
+    "com.cmi.jegotrip",
+    "com.ximalaya.ting.android",
+    "com.taobao.idlefish",
+    "com.helipay.life",
+    "cn.postar.gtxy.xl",
+    "com.mi.car.mobile",
+    "com.xiaomi.shop",
+    "com.xiaomi.vipaccount",
+    "com xiaomi.account",
+    "ctrip.android.view",
+    "com.wanbangauto.chargepile",
+    "com.crland.mixc",
+    "com.cpplkit",
+    "com.xiaomi.market",
+    "com.yitong.mbank.psbc",
+    "com.unionpay",
+    "com.cmbchina.ccd.pluto.cmbActivity",
+    "cmb.pb",
+    "com.eg.android.AlipayGphone",
+    "com.ct.client",
+    "com.huawei.wear.guard",
+    "com.icbc",
+    "com.chinamworld.main",
+    "com.android.bankabc",
+    "com.greenpoint.android.mc10086.activity",
+    "com.chinamworld.bocmbci",
+    "com.boc.bocsoft.phone.enterprise",
+    "com.sgcc.evs.echarge",
+    "com.xmgov.xmapp",
+    "com.miui.themestore",
+    "com.tencent.mobileqq",
+    "com.tencent.qqmusic",
+    "com.teslamotors.tesla",
+    "com.tplink.smbcloud",
+    "com.miui.analytics",
+    "com.miui.gallery",
+    "com.miui.voiceassist",
+    "com.miui.micloudsync",
+    "com.miui.rom",
+    "com.miui.cloudbackup",
+    "com.miui.notification",
+    "com.miui.yellowpage",
+    "com.miui.mediaeditor",
+    "com.miui.system",
+    "com.miui.voicetrigger",
+    "com.miui.home",
+    "com.miui.wmsvc",
+    "com.xiaomi.gamecenter.sdk.service",
+    "com.miui.systemui.overlay.miui",
+    "com.milink.service",
+    "com.miui.misound",
+    "com.xiaomi.metoknlp",
+    "com.miui.personalassistant",
+    "com.android.thememanager",
+    "com.miui.securityinputmethod"
+   ],
+   "stack": "mixed",
+   "sniff": true
+  },
+  {
+   "type": "http",
+   "tag": "http-in",
+   "listen": "::",
+   "listen_port": 7890
+  },
+  {
+   "type": "socks",
+   "tag": "socks-in",
+   "listen": "::",
+   "listen_port": 7891
+  }
+ ],
+ "outbounds": [
+  {
+   "type": "selector",
+   "tag": "select",
+   "outbounds": [
+    "usarmsstls",
+    "jplssstls",
+    "warp+",
+    "cfvless",
+    "qnap",
+    "ss-home"
+   ],
+   "default": "usarmsstls"
+  },
+  {
+   "type": "selector",
+   "tag": "speedtest",
+   "outbounds": [
+    "direct",
+    "usarmsstls",
+    "jplssstls",
+    "warp+",
+    "cfvless",
+    "qnap",
+    "ss-home"
+   ],
+   "default": "direct"
+  },
+  {
+   "type": "urltest",
+   "tag": "home",
+   "outbounds": [
+    "ss-home",
+    "qnap"
+   ],
+   "url": "http://taobao.com"
+  },
+  {
+   "type": "selector",
+   "tag": "openai",
+   "outbounds": [
+    "usarmsstls",
+    "jplssstls"
+   ],
+   "default": "usarmsstls"
+  },
+  {
+   "type": "selector",
+   "tag": "tiktok",
+   "outbounds": [
+    "usarmsstls",
+    "jplssstls"
+   ],
+   "default": "usarmsstls"
+  },
+  {
+   "server": "speed.cloudflare.com",
+   "server_port": 443,
+   "tag": "cfvless",
+   "tls": {
+    "enabled": true,
+    "server_name": "muvless..top"
+   },
+   "transport": {
+    "headers": {
+     "Host": [
+      "muvless..top"
+     ]
+    },
+    "path": "/?ed=2048",
+    "type": "ws"
+   },
+   "type": "vless",
+   "uuid": "b0e9ctca-d24a-49a0-b3af-62462034d55e",
+   "packet_encoding": "xudp"
+  },
+  {
+   "password": "1u6axAlo3x7H",
+   "tag": "usarmsstls",
+   "type": "shadowsocks",
+   "method": "chacha20-ietf-poly1305",
+   "detour": "usarmsstls-shadowtls",
+   "udp_over_tcp": {
+    "enabled": true
+   }
+  },
+  {
+   "password": "a3RDlc90pFaLK2Lx",
+   "server": "192...",
+   "server_port": 8443,
+   "tag": "usarmsstls-shadowtls",
+   "tls": {
+    "enabled": true,
+    "server_name": "gateway.icloud.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "type": "shadowtls",
+   "version": 3
+  },
+  {
+   "password": "1u6axAlo3x7H",
+   "tag": "jplssstls",
+   "type": "shadowsocks",
+   "method": "chacha20-ietf-poly1305",
+   "detour": "jplssstls-shadowtls",
+   "udp_over_tcp": {
+    "enabled": true
+   }
+  },
+  {
+   "password": "a3RDlc90pFaLK2Lx",
+   "server": "52...",
+   "server_port": 8443,
+   "tag": "jplssstls-shadowtls",
+   "tls": {
+    "enabled": true,
+    "server_name": "gateway.icloud.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "type": "shadowtls",
+   "version": 3
+  },
+  {
+   "server": "2606:4700:d0::4928:6e93:4d54",
+   "server_port": 1070,
+   "tag": "warp+",
+   "type": "wireguard",
+   "local_address": [
+    "172.16.0.2/32",
+    "2606::b683/128"
+   ],
+   "private_key": "qOv6A+o4pqjBnJJqUB56W0az73UcEaDxaR57589K4VA=",
+   "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo="
+  },
+  {
+   "tag": "qnap",
+   "type": "wireguard",
+   "local_address": [
+    "198.18.7.2/32"
+   ],
+   "private_key": "qOv6A+o4pqjBnJJqUB56W0az73UcEaDxaR57589K4VA=",
+   "peers": [
+    {
+     "server": "nas1.",
+     "server_port": 5111,
+     "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+     "allowed_ips": [
+      "0.0.0.0/0"
+     ]
+    }
+   ],
+   "mtu": 1420,
+   "network": "udp"
+  },
+  {
+   "tag": "ss-home",
+   "type": "shadowsocks",
+   "server": "nas1.",
+   "server_port": 4217,
+   "password": "1u6axAlo3x7H",
+   "method": "chacha20-ietf-poly1305",
+   "udp_over_tcp": {
+    "enabled": true
+   }
+  },
+  {
+   "type": "direct",
+   "tag": "direct"
+  },
+  {
+   "type": "block",
+   "tag": "block"
+  },
+  {
+   "type": "dns",
+   "tag": "dns-out"
+  }
+ ],
+ "route": {
+  "rules": [
+   {
+    "protocol": "dns",
+    "outbound": "dns-out"
+   },
+   {
+    "clash_mode": "direct",
+    "outbound": "direct"
+   },
+   {
+    "clash_mode": "global",
+    "outbound": "select"
+   },
+   {
+    "protocol": "quic",
+    "outbound": "block"
+   },
+   {
+    "inbound": "socks-in",
+    "outbound": "select"
+   },
+   {
+    "rule_set": [
+     "geosite-xiaomi-ads",
+     "AWAvenue"
+    ],
+    "outbound": "block"
+   },
+   {
+    "domain_suffix": [
+     "tesla.cn",
+     "cdn.jsdelivr.net"
+    ],
+    "outbound": "direct"
+   },
+   {
+    "type": "logical",
+    "mode": "and",
+    "rules": [
+     {
+      "wifi_ssid": [
+       "L"
+      ]
+     },
+     {
+      "ip_cidr": [
+       "192.168.10.0/24"
+      ]
+     }
+    ],
+    "outbound": "direct"
+   },
+   {
+    "ip_cidr": [
+     "192.168.10.0/24"
+    ],
+    "outbound": "home"
+   },
+   {
+    "type": "logical",
+    "mode": "or",
+    "rules": [
+     {
+      "package_name": [
+       "com.binance.dev",
+       "com.bitget.exchange",
+       "org.chromium.webapk.a24683102473f5b8b_v2",
+       "io.metamask",
+       "app.phantom"
+      ]
+     },
+     {
+      "rule_set": [
+       "geosite-crypto"
+      ]
+     }
+    ],
+    "outbound": "jplssstls"
+   },
+   {
+    "domain_suffix": [
+     "invites.fun",
+     "weather.com",
+     "pool.ntp.org",
+     "opensea.io",
+     "spotify.com",
+     "tirerack.com",
+     "tradingview.com"
+    ],
+    "outbound": "usarmsstls"
+   },
+   {
+    "domain": [
+     "services.googleapis.cn",
+     "services.googleapis.com",
+     "xn--ngstr-lra8j.com"
+    ],
+    "outbound": "select"
+   },
+   {
+    "type": "logical",
+    "mode": "or",
+    "rules": [
+     {
+      "package_name": [
+       "com.google.android.youtube",
+       "com.openai.chatgpt",
+       "com.microsoft.copilot",
+       "com.google.android.apps.bard",
+       "ai.perplexity.app.android",
+       "com.google.earth",
+       "com.weather.Weather",
+       "com.google.android.googlequicksearchbox"
+      ]
+     },
+     {
+      "rule_set": [
+       "OpenAI"
+      ]
+     }
+    ],
+    "outbound": "openai"
+   },
+   {
+    "package_name": [
+     "com.arubanetworks.arubautilities",
+     "make.more.r2d2.cellular_z",
+     "org.zwanoo.android.speedtest",
+     "com.example.usung.toolkit",
+     "com.appsteka.traceroute",
+     "com.vrem.wifianalyzer",
+     "com.ubnt.usurvey"
+    ],
+    "outbound": "speedtest"
+   },
+   {
+    "rule_set": "TikTok",
+    "outbound": "tiktok"
+   },
+   {
+    "rule_set": [
+     "YouTube",
+     "Telegram",
+     "Netflix",
+     "Global",
+     "geosite-geolocation-!cn",
+     "geoip-google",
+     "geoip-telegram",
+     "geoip-twitter",
+     "geoip-netflix"
+    ],
+    "outbound": "select"
+   },
+   {
+    "rule_set": [
+     "WeChat",
+     "Bilibili",
+     "geosite-xiaomi",
+     "geosite-geolocation-cn",
+     "geoip-cn"
+    ],
+    "outbound": "direct"
+   },
+   {
+    "ip_is_private": true,
+    "outbound": "direct"
+   }
+  ],
+  "rule_set": [
+   {
+    "type": "remote",
+    "tag": "geosite-geolocation-cn",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geosite-geolocation-!cn",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geosite-crypto",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-cryptocurrency.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geosite-xiaomi",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-xiaomi.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geosite-xiaomi-ads",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-xiaomi-ads.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geoip-cn",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_ip_rule_set/geoip-cn.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geoip-google",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_ip_rule_set/geoip-google.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geoip-telegram",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_ip_rule_set/geoip-telegram.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geoip-twitter",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_ip_rule_set/geoip-twitter.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geoip-netflix",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_ip_rule_set/geoip-netflix.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "Global",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/yangchuansheng/sing-box-geosite/main/rule/Global.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "YouTube",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/YouTube.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "OpenAI",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "TikTok",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/TikTok.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "Telegram",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/Telegram.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "Netflix",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/Netflix.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "WeChat",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/WeChat.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "Bilibili",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ajuniezeng/singbox-rule-set/master/rule-set/geosite-bilibili.json",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "AWAvenue",
+    "format": "source",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
+    "download_detour": "direct"
+   }
+  ],
+  "final": "select",
+  "find_process": true,
+  "auto_detect_interface": true
+ },
+ "experimental": {
+  "cache_file": {
+   "enabled": true
+  },
+  "clash_api": {
+   "external_controller": "0.0.0.0:9090",
+   "secret": "1",
+   "external_ui": "metacubexd",
+   "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+   "external_ui_download_detour": "select",
+   "default_mode": "rule"
+  }
+ }
+}
