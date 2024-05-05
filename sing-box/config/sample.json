@@ -1,3 +1,4 @@
+// 完美适配ipv6/小米机型
 {
  "log": {
   "disabled": false,
