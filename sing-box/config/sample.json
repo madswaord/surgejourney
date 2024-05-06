@@ -575,14 +575,25 @@
     "outbound": "openai"
    },
    {
-    "package_name": [
-     "com.arubanetworks.arubautilities",
-     "make.more.r2d2.cellular_z",
-     "org.zwanoo.android.speedtest",
-     "com.example.usung.toolkit",
-     "com.appsteka.traceroute",
-     "com.vrem.wifianalyzer",
-     "com.ubnt.usurvey"
+    "type": "logical",
+    "mode": "or",
+    "rules": [
+     {
+      "package_name": [
+       "com.arubanetworks.arubautilities",
+       "make.more.r2d2.cellular_z",
+       "org.zwanoo.android.speedtest",
+       "com.example.usung.toolkit",
+       "com.appsteka.traceroute",
+       "com.vrem.wifianalyzer",
+       "com.ubnt.usurvey"
+      ]
+     },
+     {
+      "rule_set": [
+       "geosite-speedtest"
+      ]
+     }
     ],
     "outbound": "speedtest"
    },
@@ -653,6 +664,13 @@
     "tag": "geosite-xiaomi-ads",
     "format": "binary",
     "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-xiaomi-ads.srs",
+    "download_detour": "direct"
+   },
+   {
+    "type": "remote",
+    "tag": "geosite-speedtest",
+    "format": "binary",
+    "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-speedtest.srs",
     "download_detour": "direct"
    },
    {
