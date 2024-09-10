@@ -72,6 +72,13 @@ payload:
 - DOMAIN-SUFFIX,binancezh.sh
 - DOMAIN-SUFFIX,binancezh.top
 - DOMAIN-SUFFIX,bnappzh.mobi
+- DOMAIN-SUFFIX,bnappzh.co
+- DOMAIN-SUFFIX,bnappzh.com
+- DOMAIN-SUFFIX,bnappzh.mobi
+- DOMAIN-SUFFIX,bnbstatic.com
+- DOMAIN-SUFFIX,bntrace.com
+- DOMAIN-SUFFIX,boba.network
+- DOMAIN-SUFFIX,bsc.getblock.io
 - DOMAIN-SUFFIX,bsc.getblock.io
 - DOMAIN-SUFFIX,bscscan.com
 - PROCESS-NAME,Binance.exe
