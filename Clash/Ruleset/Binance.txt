@@ -82,6 +82,7 @@ binancezh.pro
 binancezh.sh
 binancezh.top
 bnappzh.co
+bnappweb.biz
 bnbstatic.com
 bnbzh.ac
 bntrace.com
